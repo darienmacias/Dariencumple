@@ -4,6 +4,12 @@ const countdown = document.querySelector("#countdown");
 
 function getBirthdayTarget() {
   const now = new Date();
+  const testMode = new URLSearchParams(window.location.search).get("prueba");
+
+  if (testMode === "2min") {
+    return new Date(now.getTime() + 2 * 60 * 1000);
+  }
+
   return new Date(now.getFullYear(), 8, 25, 0, 0, 0, 0);
 }
 
