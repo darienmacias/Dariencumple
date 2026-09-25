@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #00ffff;
+  background-image: radial-gradient(#ff00ff 1px, transparent 1px);
+  background-size: 9px 9px;
+  color: #000080;
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif;
+  padding: 20px 12px 44px;
+}
+
+.page-shell {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.countdown-screen,
+.birthday-content {
+  border: 8px ridge #ff1493;
+  background: #ffff00;
+  box-shadow: 12px 12px 0 #000080, -7px -7px 0 #ff6600;
+  padding: 22px;
+  text-align: center;
+}
+
+.countdown-screen {
+  min-height: min(620px, 82vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.construction,
+.top-banner {
+  border: 4px outset #ffffff;
+  background: #ff6600;
+  color: #ffffff;
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 3px;
+  padding: 10px;
+  text-shadow: 2px 2px #000000;
+}
+
+h1 {
+  margin: 10px auto;
+  color: #ff00ff;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  line-height: 0.98;
+  text-shadow: 3px 3px #000080, -2px -2px #ffffff;
+  text-transform: uppercase;
+}
+
+.countdown-screen h1 {
+  max-width: 760px;
+}
+
+.countdown-intro {
+  color: #000000;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: bold;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 18px);
+  flex-wrap: wrap;
+  color: #ffffff;
+}
+
+.time-unit {
+  border: 6px outset #00ff00;
+  background: #000080;
+  min-width: 110px;
+  padding: 11px 14px;
+}
+
+.time-number {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: clamp(2.4rem, 8vw, 5.2rem);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.time-label {
+  color: #ffff00;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.blink {
+  animation: blink 0.8s steps(2, start) infinite;
+  color: #ff0000;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.birthday-content {
+  background: #00ff00;
+  border-color: #0000ff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.birthday-content h1 {
+  color: #0000ff;
+  margin-bottom: 0;
+}
+
+.visitor-counter,
+.guestbook {
+  border: 3px dashed #ff0000;
+  background: #ffffff;
+  color: #ff0000;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 6px 12px;
+}
+
+.video-frame {
+  align-self: center;
+  width: min(760px, 100%);
+  border: 10px ridge #ff00ff;
+  background: #000000;
+  padding: 8px;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+}
+
+.birthday-content h2 {
+  color: #ff0000;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  margin: 4px 0;
+  text-shadow: 3px 3px #ffff00;
+  transform: rotate(-2deg);
+}
+
+.message-row {
+  align-items: center;
+  background: #ff00ff;
+  border: 7px groove #ffff00;
+  color: #ffffff;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  padding: 18px;
+  text-align: left;
+}
+
+.message-box {
+  flex: 1 1 55%;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.35;
+  text-shadow: 1px 1px #000000;
+}
+
+.message-box p {
+  margin: 0 0 14px;
+}
+
+.signature {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+.message-row img {
+  border: 8px outset #ffffff;
+  flex: 0 1 260px;
+  max-width: 34%;
+  height: auto;
+}
+
+.footer-stars {
+  color: #0000ff;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding-top: 8px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px 6px 28px;
+  }
+
+  .countdown-screen,
+  .birthday-content {
+    padding: 12px 8px;
+    box-shadow: 6px 6px 0 #000080, -4px -4px 0 #ff6600;
+  }
+
+  .time-unit {
+    min-width: 73px;
+    padding: 8px 5px;
+  }
+
+  .message-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .message-row img {
+    align-self: center;
+    max-width: 75%;
+  }
+}
